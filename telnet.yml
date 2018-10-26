@@ -1,0 +1,9 @@
+---
+- name: install something
+  hosts: all
+  tasks:
+    - name: install on CentOS
+      when: ansible_os_family == "RedHat"
+      package:
+        name: telnet
+        state: present
